@@ -17,7 +17,7 @@ spec:
       initContainers:
         - name: wait-for-rabbitmq
           image: busybox
-          command: ['sh', '-c', 'until nc -z rabbitmq 5672; do echo waiting for rabbitmq; sleep 2; done;']
+          command: ['sh', '-c', 'sleep 30']
       containers:
         - name: consumer
           image: reezazahedi/consumer
