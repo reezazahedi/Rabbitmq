@@ -2,9 +2,7 @@ import pika
 import time
 import random
 
-connection_parameter = pika.ConnectionParameters('localhost')
-
-connection = pika.BlockingConnection(connection_parameter)
+connection = pika.BlockingConnection(pika.ConnectionParameters('rabbitmq'))
 
 channel = connection.channel()
 

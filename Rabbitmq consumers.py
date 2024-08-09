@@ -9,9 +9,7 @@ def on_message_received(ch, method, properties, body):
     ch.basic_ack(delivery_tag=method.delivery_tag)
     print("finished processing the message")
 
-connection_parameter = pika.ConnectionParameters('localhost')
-
-connection = pika.BlockingConnection(connection_parameter)
+connection = pika.BlockingConnection(pika.ConnectionParameters('rabbitmq'))
 
 channel = connection.channel()
 
